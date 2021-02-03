@@ -1,21 +1,52 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import * as React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import HomeScreen from "./screens/HomeScreen/HomeScreen";
+import ScreenAT1 from "./screens/MessengerScreen/ScreenAT1";
+import ScreenDA from "./screens/MessengerScreen/ScreenDA";
+import ScreenMTP from "./screens/MessengerScreen/ScreenMTP";
+import ScreenNga from "./screens/MessengerScreen/ScreenNga";
+import ScreenVirusS from "./screens/MessengerScreen/ScreenVirusS";
+const Stack = createStackNavigator();
+const navOptionHandler = () => ({
+  headerShown: false,
+});
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="HomeScreen">
+        <Stack.Screen
+          name="HomeScreen"
+          component={HomeScreen}
+          options={navOptionHandler}
+        />
+        <Stack.Screen
+          name="ScreenAT1"
+          component={ScreenAT1}
+          options={navOptionHandler}
+        />
+        <Stack.Screen
+          name="ScreenDA"
+          component={ScreenDA}
+          options={navOptionHandler}
+        />
+        <Stack.Screen
+          name="ScreenMTP"
+          component={ScreenMTP}
+          options={navOptionHandler}
+        />
+        <Stack.Screen
+          name="ScreenNga"
+          component={ScreenNga}
+          options={navOptionHandler}
+        />
+        <Stack.Screen
+          name="ScreenVirusS"
+          component={ScreenVirusS}
+          options={navOptionHandler}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
