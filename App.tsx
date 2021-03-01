@@ -6,7 +6,9 @@ import ScreenAT1 from "./screens/MessengerScreen/ScreenAT1";
 import ScreenDA from "./screens/MessengerScreen/ScreenDA";
 import ScreenMTP from "./screens/MessengerScreen/ScreenMTP";
 import ScreenNga from "./screens/MessengerScreen/ScreenNga";
+import ScreenNam from "./screens/MessengerScreen/ScreenNam";
 import ScreenVirusS from "./screens/MessengerScreen/ScreenVirusS";
+import CreateMess from "./screens/CreateMess/CreateMess";
 const Stack = createStackNavigator();
 const navOptionHandler = () => ({
   headerShown: false,
@@ -37,6 +39,11 @@ export default function App() {
           options={navOptionHandler}
         />
         <Stack.Screen
+          name="ScreenNam"
+          component={ScreenNam}
+          options={navOptionHandler}
+        />
+        <Stack.Screen
           name="ScreenNga"
           component={ScreenNga}
           options={navOptionHandler}
@@ -44,6 +51,11 @@ export default function App() {
         <Stack.Screen
           name="ScreenVirusS"
           component={ScreenVirusS}
+          options={navOptionHandler}
+        />
+        <Stack.Screen
+          name="CreateMess"
+          component={CreateMess}
           options={navOptionHandler}
         />
       </Stack.Navigator>

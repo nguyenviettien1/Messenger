@@ -7,8 +7,8 @@ import {
 } from "@expo/vector-icons";
 import styles from "./styles";
 import { AvatarM } from "../Avatar/AvatarM";
-import { TextInput } from "react-native-gesture-handler";
-export const AppBar = () => {
+import { TextInput, TouchableOpacity } from "react-native-gesture-handler";
+export const AppBar = (props: any) => {
   return (
     <View>
       <View style={styles.container}>
@@ -21,13 +21,18 @@ export const AppBar = () => {
           <View style={styles.button}>
             <FontAwesome name="camera" size={18} color="black"></FontAwesome>
           </View>
-          <View style={styles.button}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => {
+              props.navigation.navigate("CreateMess");
+            }}
+          >
             <MaterialCommunityIcons
               name="pencil"
               size={19}
               color="black"
             ></MaterialCommunityIcons>
-          </View>
+          </TouchableOpacity>
         </View>
       </View>
     </View>

@@ -208,7 +208,12 @@ export const Feed = (props: any) => {
           </View>
         </View>
       </View>
-      <View style={styles.messItem}>
+      <TouchableOpacity
+        style={styles.messItem}
+        onPress={() => {
+          props.navigation.navigate("ScreenNam");
+        }}
+      >
         <AvatarL
           source={require("../../assets/nam.jpg")}
           online={true}
@@ -234,7 +239,7 @@ export const Feed = (props: any) => {
             hidden={true}
           ></AvatarSS>
         </View>
-      </View>
+      </TouchableOpacity>
       <View style={styles.messItem}>
         <AvatarL
           source={require("../../assets/bac.jpg")}
